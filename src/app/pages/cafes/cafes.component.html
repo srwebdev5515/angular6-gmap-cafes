@@ -1,0 +1,28 @@
+<div class="cafes-container d-flex position-relative" *ngIf="cafesService.center">
+  <div class="list d-flex flex-column">
+    <div class="date-picker">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" [(ngModel)]="date" [owlDateTime]="dt2" placeholder="Date Time" (dateTimeChange)="dateChanged()" />
+          <div class="input-group-append">
+            <owl-date-time #dt2></owl-date-time>
+            <button class="btn btn-primary" [owlDateTimeTrigger]="dt2" type="button">
+              <i class="fa fa-calendar"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <app-cafes-list [cafes]="cafes"></app-cafes-list>
+    </div>
+  </div>
+  <div class="map card">
+    <app-cafes-map class="map-container" [cafes]="cafes" (centerChange)="getCafesList()"></app-cafes-map>
+  </div>
+
+  <div class="loading-container" *ngIf="loading">
+    <i class="fa fa-spin fa-spinner"></i>
+  </div>
+</div>

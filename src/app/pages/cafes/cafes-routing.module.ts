@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CafesComponent } from './cafes.component';
 
 const routes: Routes = [
-  { path: '', loadChildren: './pages/pages.module#PagesModule' },
+  { path: '', component: CafesComponent },
   { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class CafesRoutingModule { }

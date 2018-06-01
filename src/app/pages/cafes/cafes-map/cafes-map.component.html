@@ -1,0 +1,16 @@
+<agm-map
+  [latitude]="cafesService.center.latitude"
+  [longitude]="cafesService.center.longitude"
+  [zoom]="16"
+  (mouseup)="dragEnd()"
+  (centerChange)="centerChanged($event)"
+>
+  <agm-marker
+    *ngFor="let cafe of cafes"
+    [iconUrl]="getIconUrl(cafe.placeId)"
+    [latitude]="cafe.location.latitude"
+    [longitude]="cafe.location.longitude"
+  >
+    <agm-info-window class="info-window">{{ cafe.name }}</agm-info-window>
+  </agm-marker>
+</agm-map>

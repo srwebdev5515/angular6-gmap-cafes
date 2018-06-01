@@ -1,0 +1,38 @@
+.cafes-container {
+  height: calc(100vh - 40px);
+
+  .list {
+    width: 400px;
+
+    .form-control {
+      flex: 1;
+    }
+
+    .card {
+      flex: 1;
+      overflow: auto;
+    }
+  }
+
+  .map {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .loading-container {
+    background-color: rgba(200, 200, 200, .3);
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 50px;
+    }
+  }
+}

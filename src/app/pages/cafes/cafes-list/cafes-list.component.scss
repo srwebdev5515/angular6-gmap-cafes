@@ -1,0 +1,19 @@
+.list {
+  .cafe {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+
+    .name {
+      flex: 1;
+    }
+
+    .fa-heart {
+      color: #aaa;
+      cursor: pointer;
+
+      &.like {
+        color: #bf4f51;
+      }
+    }
+  }
+}

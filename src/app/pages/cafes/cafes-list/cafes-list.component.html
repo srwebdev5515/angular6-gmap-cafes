@@ -1,0 +1,6 @@
+<div class="list">
+  <div class="cafe d-flex align-items-center" *ngFor="let cafe of cafes">
+    <div class="name">{{ cafe.name }}</div>
+    <i class="fa fa-heart" [class.like]="cafesService.isFavorite(cafe.placeId)" (click)="cafesService.likeCafe(cafe.placeId)"></i>
+  </div>
+</div>
