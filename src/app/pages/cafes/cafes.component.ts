@@ -44,8 +44,8 @@ export class CafesComponent implements OnInit {
     if (cafe.openingHours) {
       const day = this.date.getDay();
       const time = moment(this.date).format('HHmm');
-      const periods = cafe.openingHours.periods.filter(p => p.close.day === day);
-      return !periods.every(period => period.close.time < time || period.open.time > time);
+      const periods = cafe.openingHours.periods.filter(p => p.close && p.close.day === day);
+      return !periods.every(period => (period.close && period.close.time < time) || (period.open && period.open.time > time));
     }
 
     return true;
